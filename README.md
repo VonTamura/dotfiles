@@ -15,13 +15,18 @@ Clone repository
 ```bash
 config clone --bare https://github.com/VonTamura/dotfiles.git $HOME/dotfiles/
 ```
+In ```~/``` set the flag showUntrackedFiles to no on this specific (local) repository:
+```bash
+config config --local status.showUntrackedFiles no
+```
 ## Usage
+In ```~/```:
 ```bash
 config pull
 ```
 ## Referencies
 [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)
 --
-# Git Bare Repository - A Better Way To Manage Dotfiles
+Git Bare Repository - A Better Way To Manage Dotfiles
 [![Git Bare Repository - A Better Way To Manage Dotfiles](https://img.youtube.com/vi/tBoLDpTWVOM/0.jpg)](https://www.youtube.com/watch?v=tBoLDpTWVOM)
 
