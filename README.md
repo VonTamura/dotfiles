@@ -19,10 +19,9 @@ config clone --bare https://github.com/VonTamura/dotfiles.git $HOME/dotfiles/
 ```bash
 config pull
 ```
-
-
 ## Referencies
-[a link](https://www.atlassian.com/git/tutorials/dotfiles)
-
-[![Alt text](https://img.youtube.com/vi/tBoLDpTWVOM/0.jpg)](https://www.youtube.com/watch?v=tBoLDpTWVOM)
+[The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)
+--
+# Git Bare Repository - A Better Way To Manage Dotfiles
+[![Git Bare Repository - A Better Way To Manage Dotfiles](https://img.youtube.com/vi/tBoLDpTWVOM/0.jpg)](https://www.youtube.com/watch?v=tBoLDpTWVOM)
 
