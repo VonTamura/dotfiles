@@ -57,9 +57,6 @@ Plugin 'mbbill/undotree' "timelapse versions
 "Plugin 'othree/yajs.vim'
 "Plugin 'pangloss/vim-javascript'
 
-let g:fzf_preview_window = ['up:40%:hidden', 'ctrl-/']
-
-
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -77,6 +74,10 @@ set colorcolumn=80
 let g:airline#extensions#tabline#enabled = 1
 
 "FZF
+let g:fzf_preview_window = ['right:40%', 'ctrl-/']
+
+nnoremap <silent> <C-f> :Files<CR>
+
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
@@ -114,6 +115,20 @@ colorscheme dogrun
 
 "NerdFont
 set encoding=utf-8
+
+"undotree config  persistent undo
+if has("persistent_undo")
+   let target_path = expand('~/.undodir')
+
+    " create the directory and any parent directories
+    " if the location does not exist.
+    if !isdirectory(target_path)
+        call mkdir(target_path, "p", 0700)
+    endif
+
+    let &undodir=target_path
+    set undofile
+endif
 " ---------------------------------------------------------------------------
 "  Open URL on current line in browser
 " ---------------------------------------------------------------------------
@@ -157,12 +172,9 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 " ----------------------------------------------------------------------------
 "  Copy on clipboard
 set clipboard=unnamed "copy on clipboard with yank (y)
-"vmap <F1> :w !pbcopy<CR><CR>
+
 " Open current file on chrome
 nnoremap <F2> :!open %<CR><CR>
-"FZF map
-nnoremap <silent> <C-p> :Files<CR>
-"surf
 
 "undotree
 nnoremap <F5> :UndotreeToggle<CR>
