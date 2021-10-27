@@ -13,7 +13,7 @@ echo "alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'" >
 ```
 Clone repository
 ```bash
-git clone --bare https://github.com/VonTamura/dotfiles.git $HOME/dotfiles/
+config clone --bare https://github.com/VonTamura/dotfiles.git $HOME/dotfiles/
 ```
 ## Usage
 ```bash
@@ -22,7 +22,7 @@ config pull
 
 
 ## Referencies
+[a link](https://www.atlassian.com/git/tutorials/dotfiles)
 
-https://www.atlassian.com/git/tutorials/dotfiles
+[![Alt text](https://img.youtube.com/vi/tBoLDpTWVOM/0.jpg)](https://www.youtube.com/watch?v=tBoLDpTWVOM)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tBoLDpTWVOM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
