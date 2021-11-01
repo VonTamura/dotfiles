@@ -24,6 +24,8 @@ Plugin 'tpope/vim-surround' "Surround text visual mode:(S[)
 Plugin 'mattn/emmet-vim' "Autocompletion html tags ( C-y-, ) 
 Plugin 'gregsexton/matchtag'	  " matching HTML tags (?)
 Plugin 'jiangmiao/auto-pairs'      " Insert or delete brackets, parens, quotes in pair
+Plugin 'dsawardekar/wordpress.vim'
+Plugin 'Chiel92/vim-autoformat'
 
 "Colors and Themes
 "Plugin 'dracula/vim', { 'name': 'dracula' }
@@ -48,6 +50,7 @@ Plugin 'scrooloose/nerdcommenter' " Comment line <leader>cc
 Plugin 'ivalkeen/nerdtree-execute' "nerdtree execute option m, x current sistem app
 Plugin 'turbio/bracey.vim'    "  liveView html construction :Bracey actives (install node, npm install --prefix server on plugin dir)
 Plugin 'mbbill/undotree' "timelapse versions
+Plugin 'ap/vim-css-color'   "preview css-colors
 
 "Personal Plugins
 "set rtp+=/usr/local/opt/fzf "fzf complement (?)
@@ -70,6 +73,12 @@ set colorcolumn=80
 " ----------------------------------------------------------------------------
 " Config 
 " ----------------------------------------------------------------------------
+"Indent / tabs / spaces
+:set tabstop=2
+:set shiftwidth=2
+:set expandtab
+
+
 "Airline
 let g:airline#extensions#tabline#enabled = 1
 
