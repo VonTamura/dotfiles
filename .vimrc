@@ -86,6 +86,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:fzf_preview_window = ['right:40%', 'ctrl-/']
 
 nnoremap <silent> <C-f> :Files<CR>
+nnoremap <silent> <C-t> :Ag<CR>
 
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
