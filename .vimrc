@@ -4,7 +4,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim            "vundle for vim
+"set rtp+=~/.config/nvim/bundle/Vundle.vim     "vundle for nvim
 call vundle#begin()
 
 
@@ -51,6 +52,7 @@ Plugin 'ivalkeen/nerdtree-execute' "nerdtree execute option m, x current sistem 
 Plugin 'turbio/bracey.vim'    "  liveView html construction :Bracey actives (install node, npm install --prefix server on plugin dir)
 Plugin 'mbbill/undotree' "timelapse versions
 Plugin 'ap/vim-css-color'   "preview css-colors
+Plugin 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 "Personal Plugins
 "set rtp+=/usr/local/opt/fzf "fzf complement (?)
@@ -117,7 +119,7 @@ set mouse+=a
 
 "colorscheme
 syntax on
-colorscheme dogrun 
+colorscheme tokyonight 
 
 "Search
 :set hlsearch
