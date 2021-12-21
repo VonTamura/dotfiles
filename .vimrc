@@ -18,7 +18,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 
 "Typing
-"Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'tpope/vim-surround' "Surround text visual mode:(S[)
 Plugin 'mattn/emmet-vim' "Autocompletion html tags ( C-y-, ) 
@@ -26,6 +26,7 @@ Plugin 'gregsexton/matchtag'	  " matching HTML tags (?)
 Plugin 'jiangmiao/auto-pairs'      " Insert or delete brackets, parens, quotes in pair
 Plugin 'dsawardekar/wordpress.vim'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'jwhitley/vim-matchit'
 
 "Colors and Themes
 "Plugin 'dracula/vim', { 'name': 'dracula' }
@@ -51,6 +52,8 @@ Plugin 'ivalkeen/nerdtree-execute' "nerdtree execute option m, x current sistem 
 Plugin 'turbio/bracey.vim'    "  liveView html construction :Bracey actives (install node, npm install --prefix server on plugin dir)
 Plugin 'mbbill/undotree' "timelapse versions
 Plugin 'ap/vim-css-color'   "preview css-colors
+Plugin 'ghifarit53/tokyonight-vim'
+Plugin 'c9s/bufexplorer'
 
 "Personal Plugins
 "set rtp+=/usr/local/opt/fzf "fzf complement (?)
@@ -94,6 +97,9 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit',
   \ 'ctrl-o': ':r !echo'}
 
+
+
+
 ""Syntastic
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
@@ -117,7 +123,12 @@ set mouse+=a
 
 "colorscheme
 syntax on
-colorscheme dogrun 
+set termguicolors
+
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+
+colorscheme tokyonight
 
 "Search
 :set hlsearch
@@ -188,5 +199,18 @@ nnoremap <F2> :!open %<CR><CR>
 
 "undotree
 nnoremap <F5> :UndotreeToggle<CR>
+
+"figitive (git)
+nmap <silent><leader>gb :Gblame<CR>
+nmap <silent><leader>gs :Git<CR>
+nmap <silent><leader>gd :Gdiff<CR>
+nmap <silent><leader>gl :Glog<CR>
+nmap <silent><leader>gc :Git commit<CR>
+nmap <silent><leader>gP :Git push<CR>
+nmap <silent><leader>gp :Git pull<CR>
+
+
+
+
 
 " ----------------------------------------------------------------------------
