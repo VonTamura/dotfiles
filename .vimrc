@@ -19,7 +19,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 
 "Typing
-"Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'tpope/vim-surround' "Surround text visual mode:(S[)
 Plugin 'mattn/emmet-vim' "Autocompletion html tags ( C-y-, ) 
@@ -27,6 +27,7 @@ Plugin 'gregsexton/matchtag'	  " matching HTML tags (?)
 Plugin 'jiangmiao/auto-pairs'      " Insert or delete brackets, parens, quotes in pair
 Plugin 'dsawardekar/wordpress.vim'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'jwhitley/vim-matchit'
 
 "Colors and Themes
 "Plugin 'dracula/vim', { 'name': 'dracula' }
@@ -53,6 +54,7 @@ Plugin 'turbio/bracey.vim'    "  liveView html construction :Bracey actives (ins
 Plugin 'mbbill/undotree' "timelapse versions
 Plugin 'ap/vim-css-color'   "preview css-colors
 Plugin 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plugin 'c9s/bufexplorer'
 
 "Personal Plugins
 "set rtp+=/usr/local/opt/fzf "fzf complement (?)
@@ -95,6 +97,9 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit',
   \ 'ctrl-o': ':r !echo'}
+
+
+
 
 ""Syntastic
 "set statusline+=%#warningmsg#
@@ -190,5 +195,18 @@ nnoremap <F2> :!open %<CR><CR>
 
 "undotree
 nnoremap <F5> :UndotreeToggle<CR>
+
+"figitive (git)
+nmap <silent><leader>gb :Gblame<CR>
+nmap <silent><leader>gs :Git<CR>
+nmap <silent><leader>gd :Gdiff<CR>
+nmap <silent><leader>gl :Glog<CR>
+nmap <silent><leader>gc :Git commit<CR>
+nmap <silent><leader>gP :Git push<CR>
+nmap <silent><leader>gp :Git pull<CR>
+
+
+
+
 
 " ----------------------------------------------------------------------------
