@@ -7,7 +7,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-
+let mapleader = ","
 " --------------------------------------------------------------------------
 " Vundle
 " --------------------------------------------------------------------------
@@ -129,6 +129,7 @@ let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 
 colorscheme tokyonight
+"colorscheme solarized8_light
 
 "Search
 :set hlsearch
@@ -201,16 +202,21 @@ nnoremap <F2> :!open %<CR><CR>
 nnoremap <F5> :UndotreeToggle<CR>
 
 "figitive (git)
-nmap <silent><leader>gb :Gblame<CR>
+nmap <silent><leader>gb :G blame<CR>
 nmap <silent><leader>gs :Git<CR>
-nmap <silent><leader>gd :Gdiff<CR>
-nmap <silent><leader>gl :Glog<CR>
+nmap <silent><leader>gd :G diff<CR>
+nmap <silent><leader>gl :G log<CR>
 nmap <silent><leader>gc :Git commit<CR>
 nmap <silent><leader>gP :Git push<CR>
 nmap <silent><leader>gp :Git pull<CR>
 
+"change between panes
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
 
-
-
-
+"new 
+noremap <silent>\] :sp new<CR>
+noremap <silent>\[ :vsp new<CR>
 " ----------------------------------------------------------------------------
