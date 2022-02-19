@@ -27,6 +27,8 @@ Plugin 'jiangmiao/auto-pairs'      " Insert or delete brackets, parens, quotes i
 Plugin 'dsawardekar/wordpress.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'jwhitley/vim-matchit'
+Plugin 'scrooloose/syntastic'  " check youre syntax errors
+Plugin 'ngmy/vim-rubocop'
 
 "Colors and Themes
 "Plugin 'dracula/vim', { 'name': 'dracula' }
@@ -57,7 +59,6 @@ Plugin 'c9s/bufexplorer'
 
 "Personal Plugins
 "set rtp+=/usr/local/opt/fzf "fzf complement (?)
-"Plugin 'scrooloose/syntastic'  " check youre syntax errors
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'sonicpi.vim'          " Syntax highlighting for sonic pi and ruby files
 "Plugin 'othree/yajs.vim'
@@ -101,18 +102,19 @@ let g:fzf_action = {
 
 
 ""Syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-"let g:syntastic_Ruby_exec = 'path/to/ruby/executable'
-"let g:syntastic_javascript_checkers = ['standard']
-"let g:syntastic_html_tidy_exec = 'tidy5'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_ruby_exec = '/Users/von/.rvm/rubies/ruby-3.0.1/bin/ruby'
+let g:syntastic_eruby_mri_exec = '/Users/von/.rvm/rubies/ruby-3.0.1/bin/ruby'
+let g:syntastic_javascript_checkers = ['standard']
+let g:syntastic_html_tidy_exec = 'tidy5'
 ""javascript syntax
 "let g:javascript_plugin_flow = 1
 
@@ -125,10 +127,11 @@ set mouse+=a
 syntax on
 set termguicolors
 
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
+"let g:tokyonight_style = 'night' " available: night, storm
+"let g:tokyonight_enable_italic = 1
 
-colorscheme tokyonight
+colorscheme gruvbox_von
+"colorscheme tokyonight
 "colorscheme solarized8_light
 
 "Search
