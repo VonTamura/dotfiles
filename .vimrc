@@ -13,12 +13,15 @@ let mapleader = ","
 Plugin 'VundleVim/Vundle.vim'
 
 "Language
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'dsawardekar/wordpress.vim'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}  "require install coc marketplace
 Plugin 'dense-analysis/ale'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'sheerun/vim-polyglot'
 
 "Typing
 Plugin 'mattn/emmet-vim' "Autocompletion html tags ( C-y-, ) 
@@ -34,9 +37,9 @@ Plugin 'wadackel/vim-dogrun'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'vwxyutarooo/nerdtree-devicons-syntax'
-"Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'ghifarit53/tokyonight-vim'
 "Plugin 'bluz71/vim-nightfly-guicolors'
-"Plugin 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 "Git
 Plugin 'airblade/vim-gitgutter'
@@ -59,7 +62,6 @@ Plugin 'vim-test/vim-test' "for runing code testing
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
 
 " ----------------------------------------------------------------------------
 " Indent
@@ -79,6 +81,10 @@ set backspace=indent,eol,start
 " ----------------------------------------------------------------------------
 " Config 
 " ----------------------------------------------------------------------------
+let g:jsx_ext_required = 1
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+set wildmenu
+set wildoptions=pum
 "buffer hidden
 set hidden
 
@@ -104,12 +110,13 @@ set mouse+=a
 
 "colorscheme
 syntax on
+"colorscheme dracula
 set termguicolors
-"let g:tokyonight_style = 'night' " available: night, storm
-"let g:tokyonight_enable_italic = 1
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
 
-colorscheme gruvbox_von
-"colorscheme tokyonight
+colorscheme tokyonight
+"colorscheme gruvbox_von
 "colorscheme solarized8_light
 
 "Search
@@ -118,6 +125,11 @@ colorscheme gruvbox_von
 
 "NerdFont
 set encoding=utf-8
+scriptencoding utf-8
+set undodir=~/.vim/undodir
+set undofile
+set noswapfile
+set nobackup
 
 "undotree config  persistent undo
 if has("persistent_undo")
