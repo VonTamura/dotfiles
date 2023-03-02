@@ -3,65 +3,61 @@
 "---------------------------------------------------------------------------
 set history=1000
 filetype plugin indent on
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+call plug#begin()
 let mapleader = ","
 " --------------------------------------------------------------------------
 " Vundle
 " --------------------------------------------------------------------------
 "Instaler (Vundle)
-Plugin 'VundleVim/Vundle.vim'
+"Plug 'VundleVim/Vundle.vim'
 
 "Language
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'dsawardekar/wordpress.vim'
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}  "require install coc marketplace
-Plugin 'dense-analysis/ale'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot' "multilenguage highlighting
+Plug 'neoclide/coc.nvim', {'branch': 'release'}  "require install coc marketplace
+"Plug 'dense-analysis/ale'
+"Plug 'editorconfig/editorconfig-vim'
 
 "Typing
-Plugin 'mattn/emmet-vim' "Autocompletion html tags ( C-y-, ) 
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} "html faster
-Plugin 'gregsexton/matchtag'	  " matching HTML tags (?)
-Plugin 'tpope/vim-surround' "Surround text visual mode:(S[)
-Plugin 'jiangmiao/auto-pairs'      " Insert or delete brackets, parens, quotes in pair
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'jwhitley/vim-matchit'
+Plug 'mattn/emmet-vim' "Autocompletion html tags ( C-y-, ) 
+Plug 'gregsexton/matchtag'	  " matching HTML tags (?)
+Plug 'tpope/vim-surround' "Surround text visual mode:(S[)
+Plug 'jiangmiao/auto-pairs'      " Insert or delete brackets, parens, quotes in pair
+Plug 'jwhitley/vim-matchit'
+"Plug 'rstacruz/sparkup', {'rtp': 'vim/'} "html faster
 
-"Colors and Themes
-Plugin 'wadackel/vim-dogrun'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'vwxyutarooo/nerdtree-devicons-syntax'
-Plugin 'dracula/vim', { 'name': 'dracula' }
-Plugin 'ghifarit53/tokyonight-vim'
-"Plugin 'bluz71/vim-nightfly-guicolors'
+"Colors, interface, Themes
+Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'ericbn/vim-relativize' " line numbers
+Plug 'vwxyutarooo/nerdtree-devicons-syntax'
+Plug 'flazz/vim-colorschemes'
+Plug 'vim-airline/vim-airline' " custom bars lineinfo
+Plug 'ghifarit53/tokyonight-vim' "colorscheme
+"Plug 'dracula/vim', { 'name': 'dracula' } "colorscheme
+"Plug 'wadackel/vim-dogrun' "colorscheme
+"Plug 'bluz71/vim-nightfly-guicolors' "colorscheme
 
 "Git
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 "Tools
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline' " custom bars lineinfo
-Plugin 'ericbn/vim-relativize' " line numbers
-Plugin 'Lokaltog/vim-easymotion' 
-Plugin 'scrooloose/nerdcommenter' " Comment line <leader>cc
-Plugin 'ivalkeen/nerdtree-execute' "nerdtree execute option m, x current sistem app
-Plugin 'mbbill/undotree' "timelapse versions
-Plugin 'ap/vim-css-color'   "preview css-colors
-Plugin 'c9s/bufexplorer'
-Plugin 'vim-test/vim-test' "for runing code testing
-"Plugin 'turbio/bracey.vim'    "  liveView html construction :Bracey actives (install node, npm install --prefix server on plugin dir)
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'Lokaltog/vim-easymotion' 
+Plug 'scrooloose/nerdcommenter' " Comment line <leader>cc
+Plug 'ivalkeen/nerdtree-execute' "nerdtree execute option m, x current sistem app
+Plug 'mbbill/undotree' "timelapse versions
+Plug 'ap/vim-css-color'   "preview css-colors
+Plug 'c9s/bufexplorer'
+Plug 'vim-test/vim-test' "for runing code testing
+"Plug 'turbio/bracey.vim'    "  liveView html construction :Bracey actives (install node, npm install --prefix server on plugin dir)
 
-"All of your Plugins must be added before the following line
-call vundle#end()            " required
+"All of your Plugs must be added before the following line
+"call vundle#end()            " required
+call plug#end()            " required
 
 " ----------------------------------------------------------------------------
 " Indent
@@ -76,7 +72,6 @@ set autoindent
 
 "movement
 set backspace=indent,eol,start
-
 
 " ----------------------------------------------------------------------------
 " Config 
@@ -96,12 +91,12 @@ let g:airline#extensions#tabline#enabled = 1
 let g:fzf_preview_window = ['right:40%', 'ctrl-/']
 
 nnoremap <silent> <C-f> :Files<CR>
-nnoremap <silent> <C-t> :Ag<CR>
+nnoremap <silent> <C-t> :Rg<CR>
 
 let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'tab split',
   \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit',
+  \ 'ctrl-t': 'vsplit',
   \ 'ctrl-o': ':r !echo'}
 
 "Relativize
@@ -110,7 +105,6 @@ set mouse+=a
 
 "colorscheme
 syntax on
-"colorscheme dracula
 set termguicolors
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
@@ -118,6 +112,7 @@ let g:tokyonight_enable_italic = 1
 colorscheme tokyonight
 "colorscheme gruvbox_von
 "colorscheme solarized8_light
+"colorscheme dracula
 
 "Search
 :set hlsearch
@@ -237,3 +232,11 @@ nnoremap <silent> K :call ShowDocumentation()<CR>
 
 " Enable suggest.noselect for bug select first option in coc-config.json whit
 " :CocConfig
+let g:coc_global_extensions = [ 
+      \ 'coc-eslint8',
+      \ 'coc-prettier']
+
+
+" For large archives =
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
