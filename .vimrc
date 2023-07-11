@@ -8,7 +8,7 @@ filetype plugin indent on
 call plug#begin()
 let mapleader = ","
 " --------------------------------------------------------------------------
-" Vundle
+" Vundle X (Plug)
 " --------------------------------------------------------------------------
 "Instaler (Vundle)
 "Plug 'VundleVim/Vundle.vim'

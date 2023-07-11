@@ -21,6 +21,11 @@ config config --local status.showUntrackedFiles no
 ```
 ## Usage
 In ```~/```:
+
+```bash
+config status
+```
+
 ```bash
 config pull
 ```
